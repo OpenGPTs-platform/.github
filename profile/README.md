@@ -1,4 +1,5 @@
 ## Hi there 👋
+[DISCORD](https://discord.com/invite/K9hSNTTB)
 OpenGPTs is an open-source initiative with the goal of replicating the OpenAI "GPTs" product by creating open-source replicas of the several components that "GPTs" consist of. The successful execution of this project entails a fully observable and configurable GPTs alternative that can be deployed in a siloed environment, which can interface with any LLM, and can be extended to use unique tools.
 
 To replicate "GPTs" we will develop a series of services which can be categorized into the following layers (top-down):
