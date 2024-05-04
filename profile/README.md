@@ -16,7 +16,9 @@ This is a large project; you are welcome to contribute as much or as little as y
 
 This project just recently was put into motion by a team of experienced developers, and we strive to make it fully open-source and will thus be following best practices to ensure an efficient development process. Hosting will be provided by Agent Artificial (an organization run by a subset of these developers).
 ## Architecture
-![image](https://github.com/OpenGPTs-platform/.github/assets/37946988/2c517619-7a4d-4623-aa72-13b8b64216ff)
+![image](https://github.com/OpenGPTs-platform/.github/assets/37946988/30879977-3940-401f-81a8-2b5786b6364b)
+[_View full Figma spec_](https://www.figma.com/file/RBobTMUNS6EtelpTDyYqnA/Open-GPTs?type=whiteboard&node-id=0%3A1&t=Ga2G6MUOUiNjqe3l-1)
+
 This project is organized in a way so that there is a separation of responsibilities this enables systems to be independent and easier to develop. The OpenGPTs system as a whole begins with the `Client & Business Layer API` service where a user would create and use GPTs. All requests will be sent to the `OS Assistants API` which handles persistent storage and requesting generations, it functions in the same way as [OpenAI's Assistants API](https://platform.openai.com/docs/assistants/). Finally, the request for generation is sent to `Agent (Cognitive Architecture)` which will handles the execution of the generation.
 ### [Client & Business Layer API](https://github.com/OpenGPTs-platform/chat-ui)
 Monorepo containing the UI for users to create and use GPTs, it also handles the API requests (Business layer) executes the API calls using the [assistants](https://platform.openai.com/docs/assistants) portion of the [`openai` SDK](https://platform.openai.com/docs/libraries/python-library). This repository is a fork from [huggingface/chat-ui](https://github.com/huggingface/chat-ui).
