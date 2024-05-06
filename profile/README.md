@@ -9,23 +9,23 @@ To replicate "GPTs" we will develop a series of services that can be categorized
 1. **Client**: A client to serve as a user interface ([chat-ui](https://github.com/OpenGPTs-platform/chat-ui), forked from HuggingFace assistants client)
 2. **GPTs-to-assistants API layer**: An API layer (currently developed on the same [chat-ui](https://github.com/OpenGPTs-platform/chat-ui) Svelte-kit repository) to manage the storage of "GPTs" then mediate the requests to the assistants API.
 3. **Assistants API**: [Assistants API](https://github.com/OpenGPTs-platform/assistants-api) which will be a python based OpenAI assistants API clone (will strictly follow OpenAI Assistants API's OpenAPI spec).
-4. **Cognitive Architecture Language Agents**: [Cognitive Architecture Language Agents](https://github.com/OpenGPTs-platform/agent_artificial_tools) will execute the model's runs against the inference infrastructure while leveraging tools and according to the prompt. 
+4. **Run Executor Worker**: [Run Executor Worker](https://github.com/OpenGPTs-platform/HexAmerous) will execute the model's runs against the inference infrastructure while leveraging tools and according to the prompt. 
 5. **Inference Infrastructure**: Infrastructure to host the LLMs will include pre and post-processing to standardize features across any LLM (Will follow OpenAI completions API standard, will also be forking LiteLLM).
 
 Layers #3,4 will be highly modular so that they can serve a variety of other purposes while #1,2 are more interdependent and built specifically for the "GPTs" use case.
 This is a large project; you are welcome to contribute as much or as little as you want.
 
-This project just recently was put into motion by a team of experienced developers, and we strive to make it fully open-source and will thus be following best practices to ensure an efficient development process. Hosting will be provided by Agent Artificial (an organization run by a subset of these developers).
+This project was just recently put into motion by a team open-sourcerors 🧙. We strive to make it fully open-source while following best practices to ensure an efficient development process. Hosting will be provided by Agent Artificial (an organization run by a subset of these sourcerors).
 ## Architecture
 ![image](https://github.com/OpenGPTs-platform/.github/assets/37946988/30879977-3940-401f-81a8-2b5786b6364b)
 [_View full Figma spec_](https://www.figma.com/file/RBobTMUNS6EtelpTDyYqnA/Open-GPTs?type=whiteboard&node-id=0%3A1&t=Ga2G6MUOUiNjqe3l-1)
 
-This project is organized in a way so that there is a separation of responsibilities this enables systems to be independent and easier to develop. The OpenGPTs system as a whole begins with the `Client & Business Layer API` service where a user would create and use GPTs. All requests will be sent to the `OS Assistants API` which handles persistent storage and requesting generations, it functions in the same way as [OpenAI's Assistants API](https://platform.openai.com/docs/assistants/). Finally, the request for generation is sent to `Agent (Cognitive Architecture)` which will handles the execution of the generation.
+This project is organized in a way so that there is a separation of responsibilities this enables systems to be independent and easier to develop. The OpenGPTs system as a whole begins with the `Client & Business Layer API` service where a user would create and use GPTs. All requests will be sent to the `OS Assistants API` which handles persistent storage and requesting generations, it functions in the same way as [OpenAI's Assistants API](https://platform.openai.com/docs/assistants/). Finally, the request for generation is sent to `Run Executor Worker` which will handle the execution of the generation.
 ### [Client & Business Layer API](https://github.com/OpenGPTs-platform/chat-ui)
-Monorepo containing the UI for users to create and use GPTs, it also handles the API requests (Business layer) executes the API calls using the [assistants](https://platform.openai.com/docs/assistants) portion of the [`openai` SDK](https://platform.openai.com/docs/libraries/python-library). This repository is a fork from [huggingface/chat-ui](https://github.com/huggingface/chat-ui).
+Monorepo containing the UI for users to create and use GPTs, it also handles the API requests (Business layer) and executes the API calls using the [assistants](https://platform.openai.com/docs/assistants) portion of the [`openai` SDK](https://platform.openai.com/docs/libraries/python-library). This repository is a fork from [huggingface/chat-ui](https://github.com/huggingface/chat-ui).
 ### [OS Assistants API](https://github.com/OpenGPTs-platform/assistants-api)
 Python clone of the official [OpenAI Assistants API](https://platform.openai.com/docs/assistants). By leveraging the structure of the Assistants API we leapfrog the necessity to create our own system for managing tool-enabled AI chats.
-### [Agent (Cognitive Architecture)](https://github.com/Bakobiibizo/HexAmerous/tree/dev) _(note currently in `dev` branch)_
+### [Run Executor Worker](https://github.com/OpenGPTs-platform/HexAmerous) _(note currently in `dev` branch)_
 Agent that handles the execution of AI generations (termed [`Runs`](https://platform.openai.com/docs/assistants/how-it-works/runs-and-run-steps) in Assistants API). With knowledge of the relevant details regarding the thread it utilizes tools and generates content iteratively untill completion.
 
 ## Contribute
