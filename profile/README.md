@@ -1,6 +1,6 @@
 ## Hi there 👋
 ### [DISCORD](https://discord.gg/jZSVhtwTz6)
-### [Video Demo](https://youtu.be/yPdIEKb3jWc)
+### [Video Demo](https://www.youtube.com/watch?v=cAKcsK7uYro&t=19s)
 
 OpenGPTs is an open-source initiative with the goal of replicating the OpenAI "GPTs" product by creating open-source replicas of the several components that "GPTs" consist of. The successful execution of this project entails a fully observable and configurable GPTs alternative that can be deployed in a siloed environment, which can interface with any LLM, and can be extended to use unique tools.
 
@@ -17,7 +17,7 @@ This is a large project; you are welcome to contribute as much or as little as y
 
 This project was just recently put into motion by a team open-sourcerors 🧙. We strive to make it fully open-source while following best practices to ensure an efficient development process. Hosting will be provided by Agent Artificial (an organization run by a subset of these sourcerors).
 ## Architecture
-![image](https://github.com/OpenGPTs-platform/.github/assets/37946988/30879977-3940-401f-81a8-2b5786b6364b)
+![image](https://github.com/OpenGPTs-platform/.github/assets/37946988/c106f6ff-9d48-42a1-8cb3-663bb9932a16)
 [_View full Figma spec_](https://www.figma.com/file/RBobTMUNS6EtelpTDyYqnA/Open-GPTs?type=whiteboard&node-id=0%3A1&t=Ga2G6MUOUiNjqe3l-1)
 
 This project is organized in a way so that there is a separation of responsibilities this enables systems to be independent and easier to develop. The OpenGPTs system as a whole begins with the `Client & Business Layer API` service where a user would create and use GPTs. All requests will be sent to the `OS Assistants API` which handles persistent storage and requesting generations, it functions in the same way as [OpenAI's Assistants API](https://platform.openai.com/docs/assistants/). Finally, the request for generation is sent to `Run Executor Worker` which will handle the execution of the generation.
