@@ -1,6 +1,8 @@
 ## Hi there 👋
+### [Get Started Here](https://github.com/OpenGPTs-platform/assistants-api?tab=readme-ov-file#quickstart)
 ### [DISCORD](https://discord.gg/jZSVhtwTz6)
 ### [Video Demo](https://www.youtube.com/watch?v=cAKcsK7uYro&t=19s)
+
 
 OpenGPTs is an open-source initiative with the goal of replicating the OpenAI "GPTs" product by creating open-source replicas of the several components that "GPTs" consist of. The successful execution of this project entails a fully observable and configurable GPTs alternative that can be deployed in a siloed environment, which can interface with any LLM, and can be extended to use unique tools.
 
